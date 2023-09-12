@@ -523,3 +523,69 @@ let person2 = new Person('R',22,'Female','Dentist');
 console.log(person2);   
 
 
+//uber
+
+class Uber{
+    distance = 10;
+    waiting = 5;
+
+    constructor(distance,waiting){
+        this.distance = distance;
+        this.waiting = waiting;
+    }
+
+    getDistance(){
+        return this.distance; 
+    }
+    setDistance(dis){
+        return this.distance = dis;
+    }
+    getWaiting(){
+        return this.waiting;
+    }
+    setWaiting(wat){
+        return this.waiting = wat;
+    }
+
+    Price(dis){
+    //1km = 6
+    //min = 70'
+    let min = 70;
+    this.distance = dis;
+    let price = dis * 6;
+    let res = 0 ;
+    if(min > price){
+        res = min;
+    }else{
+        res = price
+    }
+    console.log(res);
+    return res;
+    }
+    
+     wait(w){
+        let result = 0;
+        let result1=0;
+        this.wait = w;
+        if(w > 15 && w < 30){
+            result = 50;
+        }
+        if(w < 15){
+            result = 0;
+        }
+        if(w > 30){
+            result = Math.floor(w / 30);
+            result1 = result * 100;
+        }
+        console.log(result1);
+        return result;
+     }
+
+}
+
+let travel = new Uber(300, 45);
+let price1 = (travel.Price(300));
+let wait1=(travel.wait(45))
+console.log(price1 + wait1);
+
+
